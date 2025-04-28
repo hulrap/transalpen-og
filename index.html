@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransAlpen OG - Professionelle Transportlösungen in Wien</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B3D91;
+            --secondary-color: #F5F7FA;
+            --accent-color: #FF6B35;
+            --text-dark: #1A1F36;
+            --text-light: #FFFFFF;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(11, 61, 145, 0.8), rgba(11, 61, 145, 0.6)), url('https://coffee-enchanting-salmon-241.mypinata.cloud/ipfs/bafybeia54xgugyxi6tb4vfe7buw2zdpjz4d7wc6qflf565pu6w4uyzhgba') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .service-card {
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .moving-package {
+            animation: movePackage 8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes movePackage {
+            0% { transform: translateX(-100%); }
+            70% { transform: translateX(50%) translateY(0); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <header class="sticky-header shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="logo flex items-center">
+                <img src="https://coffee-enchanting-salmon-241.mypinata.cloud/ipfs/bafkreie3jdihe6tvirv3ceimisl643ekhzvb6x6ijipkoedlrpoykdy7je" alt="TransAlpen OG Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#services" class="text-gray-800 hover:text-blue-900 font-medium transition-colors">Leistungen</a></li>
+                <li><a href="#experience" class="text-gray-800 hover:text-blue-900 font-medium transition-colors">Erfahrung</a></li>
+                <li><a href="#about" class="text-gray-800 hover:text-blue-900 font-medium transition-colors">Über Uns</a></li>
+                <li><a href="#contact" class="text-gray-800 hover:text-blue-900 font-medium transition-colors">Kontakt</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-blue-900 focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden bg-white w-full py-4 px-6 shadow-lg">
+            <ul class="space-y-4">
+                <li><a href="#services" class="block text-gray-800 hover:text-blue-900 font-medium transition-colors">Leistungen</a></li>
+                <li><a href="#experience" class="block text-gray-800 hover:text-blue-900 font-medium transition-colors">Erfahrung</a></li>
+                <li><a href="#about" class="block text-gray-800 hover:text-blue-900 font-medium transition-colors">Über Uns</a></li>
+                <li><a href="#contact" class="block text-gray-800 hover:text-blue-900 font-medium transition-colors">Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in-up">Professionelle Transportlösungen in Wien und ganz Österreich</h1>
+                <p class="text-xl md:text-2xl mb-8 fade-in-up" style="animation-delay: 0.2s;">Zuverlässig • Flexibel • Transparent</p>
+                <div class="fade-in-up" style="animation-delay: 0.4s;">
+                    <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors inline-block">
+                        Jetzt anfragen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Animation -->
+    <div class="overflow-hidden h-0">
+        <svg class="moving-package w-16 h-16 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+        </svg>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Unsere Leistungen</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Wir bieten maßgeschneiderte Transportlösungen für jeden Bedarf in Wien und ganz Österreich.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100 h-full">
+                    <div class="text-blue-900 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Kleintransporte bis 3,5 Tonnen – Österreichweit</h3>
+                    <p class="text-gray-600">Ob Umzug, Lieferung oder andere Transportaufgaben – wir bieten Ihnen flexible Lösungen für kleine Transporte bis 3,5 Tonnen, sowohl in Österreich als auch trans Alpen. Keine versteckten Kosten und ein reibungsloser Ablauf von A nach B garantiert.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100 h-full">
+                    <div class="text-blue-900 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Übersiedlungen für Privatpersonen & Firmen</h3>
+                    <p class="text-gray-600">Planen Sie einen Umzug? Egal, ob privater oder Firmenumzug – wir übernehmen die gesamte Abwicklung. Unser erfahrenes Team sorgt für einen stressfreien Umzug mit schnellem, sicherem und diskretem Service. Kostenlose Besichtigung in Wien und Umgebung!</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100 h-full">
+                    <div class="text-blue-900 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Entrümpelungen und Räumungen</h3>
+                    <p class="text-gray-600">Als junges Unternehmen legen wir großen Wert auf schnelle Reaktionszeiten und Flexibilität. Wenn es eilig ist, sind wir für Sie da – sei es für kurzfristige Transporte, schnelle Umzüge oder individuelle Wünsche. Wir garantieren, dass alles termingerecht und zuverlässig durchgeführt wird.</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6 border border-gray-100 h-full">
+                    <div class="text-blue-900 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Montage- & Demontageservice</h3>
+                    <p class="text-gray-600">Wir transportieren nicht nur Ihre Möbel, sondern bauen sie auch für Sie ab und wieder auf. So stellen wir sicher, dass alles sicher und effizient ankommt, und Sie können sich darauf verlassen, dass Ihre Möbel fachgerecht gehandhabt werden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">10 Jahre Erfahrung im Transportgewerbe</h2>
+                    <p class="text-gray-600 mb-6">Unser Team bringt langjährige Erfahrung in der Durchführung von Übersiedlungen und Transporten sowohl im In- als auch im Ausland mit.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-orange-500 mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-700">Persönlicher, flexibler & zuverlässiger Service</p>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-orange-500 mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-700">Transparente & faire Preise ohne versteckte Kosten</p>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-orange-500 mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-700">Kurzfristige Termine möglich</p>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 text-orange-500 mr-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-700">Zusammenarbeit mit allen österreichischen Speditionen</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="TransAlpen Fahrzeug" 
+                             class="w-full h-auto rounded-lg" 
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Über TransAlpen OG</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Ihr verlässlicher Partner für Transportdienstleistungen in Wien und ganz Österreich</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row mb-12 items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-blue-900 mb-3">Unser Unternehmen</h3>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <p class="text-gray-600 mb-4">Auch wenn unser Unternehmen neu gegründet wurde, bringen wir über 10 Jahre praktische Erfahrung in den Bereichen Transport, Umzug und Möbelmontage mit. Unser eingespieltes Team arbeitet professionell, effizient und mit vollem Einsatz – damit Ihr Auftrag stressfrei und reibungslos erledigt wird.</p>
+                        <p class="text-gray-600">Ob privater Umzug, gewerblicher Transport oder eine komplette Entrümpelung – wir kümmern uns darum, als wäre es unser eigenes Zuhause. <strong>TransAlpen OG– Ihre Profis mit Handschlagqualität.</strong></p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row mb-12 items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-blue-900 mb-3">Unsere Mission</h3>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <p class="text-gray-600">Wir bei TransAlpen OG haben es uns zur Aufgabe gemacht, Transportdienstleistungen auf höchstem Niveau anzubieten. Durch unsere langjährige Erfahrung, moderne Fahrzeuge und ein engagiertes Team garantieren wir zuverlässige und professionelle Lösungen für unsere Kunden.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-blue-900 mb-3">Unsere Werte</h3>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="font-bold text-blue-900 mb-2">Verlässlichkeit</h4>
+                                <p class="text-gray-600">Wir halten unsere Versprechen und sorgen für einen reibungslosen Ablauf – ohne versteckte Kosten.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="font-bold text-blue-900 mb-2">Transparenz</h4>
+                                <p class="text-gray-600">Klare Preise und Abläufe bei allen unseren Dienstleistungen.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="font-bold text-blue-900 mb-2">Flexibilität</h4>
+                                <p class="text-gray-600">Egal ob kompletter Umzug oder Zustellungen. Wir finden genau die Lösung, die für Sie passt!</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                                <h4 class="font-bold text-blue-900 mb-2">Nachhaltigkeit</h4>
+                                <p class="text-gray-600">Wir achten auf eine umweltgerechte Entsorgung und setzen auf nachhaltige Praktiken.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Kontaktieren Sie uns</h2>
+                    <p class="max-w-2xl mx-auto text-gray-600">Gerne erstellen wir Ihnen ein unverbindliches Angebot für Ihren Transport.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-xl font-bold text-blue-900 mb-6">Kontaktformular</h3>
+                            
+                            <form class="contact-form space-y-4" id="contactForm" action="https://formsubmit.co/info@transalpen-og.com" method="POST">
+                                <!-- FormSubmit.co honeypot to prevent spam -->
+                                <input type="text" name="_honey" style="display:none">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_subject" value="Neue Anfrage von der TransAlpen Website">
+                                <input type="hidden" name="_next" value="https://transalpen-og.com/danke">
+                                
+                                <div class="form-group">
+                                    <label for="name" class="block text-gray-700 font-medium mb-1">Ihr Name</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                           placeholder="Max Mustermann">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="block text-gray-700 font-medium mb-1">E-Mail</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                           placeholder="ihre@email.at">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="block text-gray-700 font-medium mb-1">Telefon</label>
+                                    <input type="tel" id="phone" name="phone" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                           placeholder="+43 650 8806141">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="block text-gray-700 font-medium mb-1">Ihre Nachricht</label>
+                                    <textarea id="message" name="message" rows="5" required 
+                                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                              placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                                </div>
+                                
+                                <button type="submit" 
+                                        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                                    Unverbindliches Angebot anfordern
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="md:w-1/2 bg-blue-900 text-white p-8">
+                            <h3 class="text-xl font-bold mb-6">Kontaktinformationen</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-orange-400 mr-4 mt-1">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Adresse</h4>
+                                        <p class="text-blue-200">Altmannsdorfer Straße 104/4/425<br>1120 Wien, Österreich</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-orange-400 mr-4 mt-1">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Telefon</h4>
+                                        <p class="text-blue-200">+43 650 8806141</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-orange-400 mr-4 mt-1">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">E-Mail</h4>
+                                        <p class="text-blue-200"><a href="mailto:info@transalpen-og.com" class="hover:text-white transition-colors">info@transalpen-og.com</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-orange-400 mr-4 mt-1">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Öffnungszeiten</h4>
+                                        <p class="text-blue-200">Mo-Fr: 7:00 - 18:00 Uhr<br>Sa: 8:00 - 14:00 Uhr</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="logo mb-4">
+                        <img src="https://coffee-enchanting-salmon-241.mypinata.cloud/ipfs/bafkreie3jdihe6tvirv3ceimisl643ekhzvb6x6ijipkoedlrpoykdy7je" alt="TransAlpen OG Logo" class="h-12 w-auto">
+                    </div>
+                    <address class="not-italic text-blue-200">
+                        Altmannsdorfer Straße 104/4/425<br>
+                        1120 Wien, Österreich
+                    </address>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition-colors">Leistungen</a></li>
+                            <li><a href="#experience" class="text-blue-200 hover:text-white transition-colors">Erfahrung</a></li>
+                            <li><a href="#about" class="text-blue-200 hover:text-white transition-colors">Über Uns</a></li>
+                            <li><a href="#contact" class="text-blue-200 hover:text-white transition-colors">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Rechtliches</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/impressum" class="text-blue-200 hover:text-white transition-colors">Impressum</a></li>
+                            <li><a href="/datenschutz" class="text-blue-200 hover:text-white transition-colors">Datenschutz</a></li>
+                            <li><a href="/agb" class="text-blue-200 hover:text-white transition-colors">AGB</a></li>
+                            <li><a href="/cookie-policy" class="text-blue-200 hover:text-white transition-colors">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Kontakt</h4>
+                        <ul class="space-y-2 text-blue-200">
+                            <li>Tel: <a href="tel:+43650880614" class="hover:text-white transition-colors">+43 650 8806141</a></li>
+                            <li>E-Mail: <a href="mailto:info@transalpen-og.com" class="hover:text-white transition-colors">info@transalpen-og.com</a></li>
+                            <li>Mo-Fr: 7:00 - 18:00</li>
+                            <li>Sa: 8:00 - 14:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-200">
+                <p>&copy; 2025 TransAlpen OG. Alle Rechte vorbehalten. Designed by <a href="https://rawfiction.xyz/" class="hover:text-white transition-colors">Raw Fiction</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-orange-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Separate pages contents (hidden by default) -->
+    <div id="impressum-page" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-900">Impressum</h1>
+                <button class="back-to-main text-blue-900 hover:text-orange-500 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="prose max-w-none">
+                <h2>Angaben gemäß § 5 TMG</h2>
+                <p>
+                    TransAlpen OG<br>
+                    Altmannsdorfer Straße 104/4/425<br>
+                    1120 Wien<br>
+                    Österreich
+                </p>
+                
+                <h3>Kontakt</h3>
+                <p>
+                    Telefon: +43 650 8806141<br>
+                    E-Mail: info@transalpen-og.com
+                </p>
+                
+                <h3>Registereintrag</h3>
+                <p>
+                    Firmenbuchnummer: FN XXXXX X<br>
+                    Firmenbuchgericht: Handelsgericht Wien
+                </p>
+                
+                <h3>Umsatzsteuer-ID</h3>
+                <p>
+                    Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: ATU XXXXXXXX
+                </p>
+                
+                <h3>EU-Streitschlichtung</h3>
+                <p>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br>
+                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                </p>
+                
+                <h3>Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h3>
+                <p>
+                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="datenschutz-page" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-900">Datenschutzerklärung</h1>
+                <button class="back-to-main text-blue-900 hover:text-orange-500 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="prose max-w-none">
+                <h2>Datenschutzerklärung</h2>
+                <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
+                <p>
+                    TransAlpen OG<br>
+                    Altmannsdorfer Straße 104/4/425<br>
+                    1120 Wien<br>
+                    Österreich
+                </p>
+                
+                <h3>Ihre Betroffenenrechte</h3>
+                <p>Unter den angegebenen Kontaktdaten können Sie jederzeit folgende Rechte ausüben:</p>
+                <ul>
+                    <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO),</li>
+                    <li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO),</li>
+                    <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),</li>
+                    <li>Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch nicht löschen dürfen (Art. 18 DSGVO),</li>
+                    <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO) und</li>
+                    <li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns abgeschlossen haben (Art. 20 DSGVO).</li>
+                </ul>
+                <p>Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+                <p>Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an die für uns als verantwortliche Stelle zuständige Behörde.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="agb-page" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-900">Allgemeine Geschäftsbedingungen</h1>
+                <button class="back-to-main text-blue-900 hover:text-orange-500 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="prose max-w-none">
+                <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+                <p>Stand: Januar 2025</p>
+                
+                <h3>1. Geltungsbereich</h3>
+                <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen der TransAlpen OG, Altmannsdorfer Straße 104/4/425, 1120 Wien (im Folgenden "TransAlpen OG") und ihren Kunden über Transportdienstleistungen, Umzugsservices, Entrümpelungen und Möbelmontagen.</p>
+                
+                <h3>2. Leistungsbeschreibung</h3>
+                <p>Die TransAlpen OG erbringt Dienstleistungen im Bereich Transport, Umzug, Entrümpelung und Möbelmontage gemäß der im Einzelfall getroffenen Vereinbarungen. Die genauen Leistungen werden im Angebot spezifiziert.</p>
+                
+                <h3>3. Vertragsabschluss</h3>
+                <p>Der Vertrag kommt durch Annahme des von der TransAlpen OG erstellten Angebots durch den Kunden zustande. Die Annahme kann schriftlich, per E-Mail oder mündlich erfolgen.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cookie-policy-page" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-900">Cookie-Richtlinie</h1>
+                <button class="back-to-main text-blue-900 hover:text-orange-500 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="prose max-w-none">
+                <h2>Cookie-Richtlinie</h2>
+                <p>Stand: Januar 2023</p>
+                
+                <h3>Was sind Cookies?</h3>
+                <p>Cookies sind kleine Textdateien, die auf Ihrem Computer, Tablet oder Mobiltelefon gespeichert werden, wenn Sie eine Website besuchen. Diese Dateien ermöglichen es der Website, sich Ihre Aktionen und Vorlieben (wie Anmeldung, Sprache, Schriftgröße und andere Anzeigeeinstellungen) über einen bestimmten Zeitraum zu merken.</p>
+                
+                <h3>Wie verwenden wir Cookies?</h3>
+                <p>Wir verwenden Cookies, um:</p>
+                <ul>
+                    <li>Die grundlegende Funktionalität unserer Website zu gewährleisten</li>
+                    <li>Ihre Nutzererfahrung zu verbessern</li>
+                    <li>Zu verstehen, wie Besucher mit unserer Website interagieren</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // The form will be handled by formsubmit.co, no need to prevent default
+            // Just provide feedback that the form is being submitted
+            localStorage.setItem('formSubmitted', 'true');
+        });
+
+        // Check if coming back from form submission
+        if (localStorage.getItem('formSubmitted') === 'true') {
+            localStorage.removeItem('formSubmitted');
+            alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
+        }
+
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Handle separate pages for footer links
+        const footerLinks = {
+            '/impressum': document.getElementById('impressum-page'),
+            '/datenschutz': document.getElementById('datenschutz-page'),
+            '/agb': document.getElementById('agb-page'),
+            '/cookie-policy': document.getElementById('cookie-policy-page')
+        };
+
+        // Show page when link is clicked
+        document.querySelectorAll('[href^="/"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = footerLinks[this.getAttribute('href')];
+                if (page) {
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling of main content
+                    page.classList.remove('hidden');
+                    // Update URL without reloading the page
+                    history.pushState(null, '', this.getAttribute('href'));
+                }
+            });
+        });
+
+        // Back to main page
+        document.querySelectorAll('.back-to-main').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('[id$="-page"]').forEach(page => {
+                    page.classList.add('hidden');
+                });
+                document.body.style.overflow = ''; // Restore scrolling
+                history.pushState(null, '', '/');
+            });
+        });
+
+        // Handle browser back/forward navigation
+        window.addEventListener('popstate', function() {
+            document.querySelectorAll('[id$="-page"]').forEach(page => {
+                page.classList.add('hidden');
+            });
+            document.body.style.overflow = '';
+            
+            const path = window.location.pathname;
+            if (footerLinks[path]) {
+                document.body.style.overflow = 'hidden';
+                footerLinks[path].classList.remove('hidden');
+            }
+        });
+
+        // Check current URL on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const path = window.location.pathname;
+            if (footerLinks[path]) {
+                document.body.style.overflow = 'hidden';
+                footerLinks[path].classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
